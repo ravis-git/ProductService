@@ -14,10 +14,10 @@ services:
       - couchbase
       - consul
     links:
-      - couchbase
+      - couchbase-product
       - consul
 
-  couchbase:
+  couchbase-product:
     build: ./couchbase
     ports:
       - 8091:8091
