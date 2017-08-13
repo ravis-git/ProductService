@@ -30,13 +30,11 @@ public class CouchbaseConfig extends AbstractCouchbaseConfiguration{
 
     @Override
     protected List<String> getBootstrapHosts() {
-        log.info("=====> couchbase host: {}", this.host);
         return Arrays.asList(this.host);
     }
 
     @Override
     protected String getBucketName() {
-        log.info("=====> couchbase bucket: {}", this.bucketName);
         return this.bucketName;
     }
 

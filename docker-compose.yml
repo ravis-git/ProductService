@@ -11,7 +11,7 @@ services:
     environment:
       SPRING_PROFILES_ACTIVE: docker
     depends_on:
-      - couchbase
+      - couchbase-product
       - consul
     links:
       - couchbase-product
@@ -22,9 +22,4 @@ services:
     ports:
       - 8091:8091
       - 27017:27017
-
-  consul:
-    build: ./consul
-    ports:
-      - 8500:8500
 

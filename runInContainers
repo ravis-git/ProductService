@@ -17,9 +17,11 @@ docker-compose stop product-service
 
 docker-compose rm -f
 
-# rebuild and start java
+# rebuild and start spring boot container
 docker-compose up --build -d product-service
-#docker-compose up --build -d
+
+# restart any other stopped container
+docker-compose up --build -d
 
 # Attach to the log output of the cluster
 docker-compose logs -f product-service
