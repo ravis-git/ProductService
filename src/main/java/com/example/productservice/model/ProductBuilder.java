@@ -56,12 +56,12 @@ public class ProductBuilder {
         return IntStream.range(0,100)
                 .mapToObj(count -> ProductBuilder.build(
                         p -> {
-                            p.setName(names.get(random.nextInt(10)));
-                            p.setSku(new BigInteger(50, random).toString());
-                            p.setSeller(sellers.get(random.nextInt(5)));
-                            p.setCost(random.nextFloat());
-                            p.setDescription("The greatest " + p.getName() + " in the hole world" );
-                            p.setInStock(random.nextBoolean());
+                            p.setName(names.get(random.nextInt(10)))
+                             .setSku(new BigInteger(50, random).toString())
+                             .setSeller(sellers.get(random.nextInt(5)))
+                             .setCost(random.nextFloat())
+                             .setDescription("The greatest " + p.getName() + " in the hole world" )
+                             .setInStock(random.nextBoolean());
                         }
                 ))
                 .collect(Collectors.toList());
