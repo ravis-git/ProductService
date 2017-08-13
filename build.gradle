@@ -27,15 +27,13 @@ repositories {
 
 dependencies {
 	compile(
-			'org.springframework.boot:spring-boot-starter',
+	    'org.springframework.boot:spring-boot-starter',
             'org.springframework.boot:spring-boot-starter-jersey',
             'org.springframework.boot:spring-boot-starter-actuator',
             'org.springframework.boot:spring-boot-starter-jersey',
             'org.projectlombok:lombok:1.16.18',
-
             'org.springframework.boot:spring-boot-starter-data-couchbase',
-
-			'org.springframework.cloud:spring-cloud-starter-consul-discovery:1.2.1.RELEASE'
+	    'org.springframework.cloud:spring-cloud-starter-consul-discovery:1.2.1.RELEASE'
 
 	)
 	testCompile(
