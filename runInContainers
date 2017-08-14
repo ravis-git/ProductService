@@ -9,19 +9,19 @@ DOCKER_IP=${DOCKER_IP:-0.0.0.0}
 
 echo 'Docker Ip set to ' $DOCKER_IP
 
-# Build the project and docker images
-./gradlew clean build
-
 # Remove existing containers
 docker-compose stop product-service
 
 docker-compose rm -f
 
+# restart any other stopped container
+docker-compose up --build -d couchbase-product
+
+# Build the project and docker images
+./gradlew clean build
+
 # rebuild and start spring boot container
 docker-compose up --build -d product-service
-
-# restart any other stopped container
-docker-compose up --build -d
 
 # Attach to the log output of the cluster
 docker-compose logs -f product-service

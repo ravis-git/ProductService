@@ -6,20 +6,22 @@ services:
 
   product-service:
     build: .
+    network_mode: bridge
     ports:
       - 8080
     environment:
       SPRING_PROFILES_ACTIVE: docker
     depends_on:
       - couchbase-product
-      - consul
     links:
       - couchbase-product
-      - consul
+    external_links:
+      - infrastructure_consul_1
 
   couchbase-product:
     build: ./couchbase
+    network_mode: bridge
     ports:
       - 8091:8091
-      - 27017:27017
+#      - 27017:27017
 

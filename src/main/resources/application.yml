@@ -25,12 +25,12 @@ spring:
   profiles: docker
   cloud:
     consul:
-      host: consul
+      host: infrastructure_consul_1
       port: 8500
 
 couchbase:
   bucket:
     name: products
     password: password
-  bootstrap-hosts: couchbase
+  bootstrap-hosts: couchbase-product
 

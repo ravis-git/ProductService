@@ -6,6 +6,11 @@ set -m
 
 sleep 15
 
+export COUCHBASE_ADMINISTRATOR_USERNAME=Administrator
+export COUCHBASE_ADMINISTRATOR_PASSWORD=password
+export COUCHBASE_BUCKET=products
+export COUCHBASE_BUCKET_PASSWORD=password
+
 curl -v -X POST http://127.0.0.1:8091/pools/default -d memoryQuota=512 -d indexMemoryQuota=512
 curl -v http://127.0.0.1:8091/node/controller/setupServices -d services=kv%2cn1ql%2Cindex
 curl -v http://127.0.0.1:8091/settings/web -d port=8091 -d username=$COUCHBASE_ADMINISTRATOR_USERNAME -d password=$COUCHBASE_ADMINISTRATOR_PASSWORD
