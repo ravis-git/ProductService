@@ -1,21 +1,22 @@
 package com.example.productservice.config;
 
 import com.example.productservice.rest.ProductApiImpl;
+import com.my.experiments.microservices.chassis.config.JerseyConfig;
 import lombok.extern.slf4j.Slf4j;
-import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.stereotype.Component;
 
 import javax.ws.rs.ApplicationPath;
+
 
 /**
  * Created by ravipalakodeti on 8/11/17.
  */
 @Component
-@ApplicationPath("api")
+@ApplicationPath("product-api")
 @Slf4j
-public class JerseyConfig extends ResourceConfig {
+public class ResrConfig extends JerseyConfig {
 
-    public JerseyConfig() {
+    public ResrConfig() {
         log.info("..... Registering jersey");
         register(ProductApiImpl.class);
     }

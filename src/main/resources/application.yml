@@ -11,8 +11,11 @@ spring:
   profiles: dev
   cloud:
     consul:
-      host: localhost
+      host: localhost 
       port: 8500
+    cluster:
+      etcd:
+        connect: http://localhost:4001
 
 couchbase:
   bucket:
@@ -28,7 +31,11 @@ spring:
       host: storeinfrastructure_consul_1
       port: 8500
       discovery:
-        preferIpAddress: true  # not using this flag makes consul use the container Id instead of ip and so breaks
+        preferIpAddress: true # not using this flag makes consul use the container Id instead of ip and so breaks:
+        healthCheckPath: /product-api/health
+    cluster:
+      etcd:
+        connect: http://localhost:4001
 
 couchbase:
   bucket:

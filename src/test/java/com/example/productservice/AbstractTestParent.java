@@ -8,6 +8,6 @@ import org.springframework.test.context.junit4.SpringRunner;
  * Created by ravipalakodeti on 8/10/17.
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(classes = DemoApplication.class)
 public abstract class AbstractTestParent {
 }
